@@ -1,33 +1,11 @@
-enum ActionType {
-  SEARCH_REPOSITORIES = 'search_repositories',
-  SEARCH_REPOSITORIES_SUCCUSS = 'search_repositories_succuss',
-  SEARCH_REPOSITORIES_ERROR = 'search_repositories_error',
-}
+import { ActionType } from '../constants/actionTypes';
+import { Action } from '../actions/actions';
 
 interface RepositoriesState {
   loading: boolean;
   error: string | null;
   data: string[];
 }
-
-interface SearchRepositoriesAction {
-  type: ActionType.SEARCH_REPOSITORIES;
-}
-
-interface SearchRepositoriesSuccussAction {
-  type: ActionType.SEARCH_REPOSITORIES_SUCCUSS;
-  payload: string[];
-}
-
-interface SearchRepositoriesErrorAction {
-  type: ActionType.SEARCH_REPOSITORIES_ERROR;
-  payload: string;
-}
-
-type Action =
-  | SearchRepositoriesAction
-  | SearchRepositoriesSuccussAction
-  | SearchRepositoriesErrorAction;
 
 const initialState: RepositoriesState = {
   loading: false,
