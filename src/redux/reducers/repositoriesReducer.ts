@@ -13,7 +13,7 @@ const initialState: RepositoriesState = {
   data: [],
 };
 
-export default (state = initialState, action: Action): RepositoriesState => {
+const repositoriesReducer = (state = initialState, action: Action): RepositoriesState => {
   switch (action.type) {
     case ActionType.SEARCH_REPOSITORIES:
       return { ...state, loading: true, error: null, data: [] };
@@ -28,3 +28,5 @@ export default (state = initialState, action: Action): RepositoriesState => {
       return state;
   }
 };
+
+export default repositoriesReducer;
