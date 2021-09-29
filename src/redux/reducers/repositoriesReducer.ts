@@ -28,4 +28,3 @@ export default (state = initialState, action: Action): RepositoriesState => {
       return state;
   }
 };
-
